@@ -4,6 +4,7 @@ import json
 from Modules import cargar_tarifas, verificar_archivo, Procesar_archivo
 from openpyxl import load_workbook
 import emoji
+import os.path as path
 
 
 def run():
@@ -38,7 +39,21 @@ def run():
         punta= archivo['Periodos']=='punta'
         punta_final= archivo[punta]
        
+        
+        # Guardado de documento final
+
+        #TODO verificar si el archivo existe
+        
         nombre_procesado= nombre[0:len(nombre)-4]+'_procesado.xlsx'
+
+        if path.exists(nombre_procesado):
+            sel = input(emoji.emojize(f":warning: {bcolors.WARNING}El nombre del archivo ya existe desea sobreescribirlo [S/N] : {bcolors.RESET} " ))
+           
+            
+            if not  (sel =='S' or sel == 's'):
+
+                raise ValueError("Archivo no guardado")
+        
 
         archivo.to_excel(nombre_procesado, "Datos")
         book = load_workbook(nombre_procesado)
@@ -69,13 +84,10 @@ def run():
         print(emoji.emojize(f':check_mark_button: {bcolors.OK} Terminado con normalidad {bcolors.RESET}'))
         print('\n\n')
         
-
-
-                   
     except Exception as e :
         print('\n\n')
         print(emoji.emojize(f":cross_mark: {bcolors.FAIL}Algo ha salido mal al procesar el archivo...{bcolors.RESET}"))
-        print(emoji.emojize(f":cross_mark: {bcolors.FAIL}{e}: {nombre}{bcolors.RESET}"))
+        print(emoji.emojize(f":cross_mark: {bcolors.FAIL}{e}{bcolors.RESET}"))
         print('\n\n')
 
 
