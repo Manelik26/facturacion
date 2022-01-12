@@ -1,0 +1,88 @@
+{
+    "descripcion": "tarifa_1",
+    "vigencia_inicial": "31/10/2021",
+    "vigencia_final": "31/01/2022",
+
+    "periodo_base":{
+        "inicio_1": "00:00",
+        "final_1": "05:59",
+        "inicio_2": null,
+        "final_2": null,
+        "inicio_3": null,
+        "final_3": null
+    },
+
+    "periodo_intermedia":{
+        "inicio_1": "06:00",
+        "final_1":  "18:29",
+        "inicio_2": "22:30",
+        "final_2":  "23:59",
+        "inicio_3": null,
+        "final_3":  null
+    },
+
+    "periodo_punta":{
+        "inicio_1": "18:30",
+        "final_1":  "22:29",
+        "inicio_2": null,
+        "final_2":  null,
+        "inicio_3": null,
+        "final_3":  null
+    },
+
+    "periodo_base_sabado":{
+        "inicio_1": "00:00",
+        "final_1":  "07:59",
+        "inicio_2": null,
+        "final_2":  null,
+        "inicio_3": null,
+        "final_3":  null
+    },
+
+    "periodo_inter_sabado":{
+        "inicio_1": "08:00",
+        "final_1":  "19:29",
+        "inicio_2": "21:30",
+        "final_2":  "23:59",
+        "inicio_3": null,
+        "final_3":  null
+    },
+
+    "periodo_punta_sabado":{
+        "inicio_1": "19:30",
+        "final_1":  "21:29",
+        "inicio_2": null,
+        "final_2":  null,
+        "inicio_3": null,
+        "final_3":  null
+    },
+
+    "periodo_base_domingo":{
+        "inicio_1": "00:00",
+        "final_1":  "17:59",
+        "inicio_2": null,
+        "final_2":  null,
+        "inicio_3": null,
+        "final_3":  null
+    },
+
+    "periodo_inter_domingo":{
+        "inicio_1": "18:00",
+        "final_1":  "23:59",
+        "inicio_2": null,
+        "final_2":  null,
+        "inicio_3": null,
+        "final_3":  null
+    },
+
+    "periodo_punta_domingo":{
+        "inicio_1": null,
+        "final_1":  null,
+        "inicio_2": null,
+        "final_2":  null,
+        "inicio_3": null,
+        "final_3":  null
+    }
+
+    
+}
