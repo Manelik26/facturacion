@@ -5,6 +5,8 @@ from pandas.core.tools.datetimes import to_datetime
 
 from pandas.core.tools.numeric import to_numeric
 
+import os.path as path
+
 def verificar(archivo):
 
     encabezado_patron = ['Fecha/hora', 'TR1.', 'Activa (KWh)', 'TR1.E.Reactiva']
@@ -49,8 +51,11 @@ def verificar(archivo):
     
 
 def abrir(nombre ):
-    archivo = pd.read_csv(nombre)
-   
+
+    if path.exists(nombre):
+        archivo = pd.read_csv(nombre)
+    else: 
+        raise ValueError("El archivo que intenta abrir no existe")   
     piv =verificar(archivo)
    
     if type(piv) == 'str': 

@@ -171,8 +171,9 @@ def dem_max (dataframe):
     id_max= dataframe.loc[dataframe['Activa (KWh)'].idxmax()]
     id_min= dataframe.loc[dataframe['Activa (KWh)'].idxmin()]
     consumo_total = dataframe['Activa (KWh)'].sum() 
+    reactivos_total = dataframe['TR1.E.Reactiva'].sum()
 
-    consumo= [consumo_total]
+    consumo= [consumo_total, reactivos_total]
 
     serie_consumo = pd.Series(consumo) 
 

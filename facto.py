@@ -47,7 +47,7 @@ def run():
 
         dm_total = Procesar_archivo.dem_max(archivo)
 
-
+        dm_total.to_excel(writer,'Resumen total')
         dm_base.to_excel(writer,'Resumen Base')
         dm_inter.to_excel(writer,'Resumen Intermedia')
         dm_punta.to_excel(writer,'Resumen punta')
@@ -62,7 +62,7 @@ def run():
 
                    
     except Exception as e :
-        print("Algo ha salido mal al procesar el archivo")
+        print("Algo ha salido mal al procesar el archivo...")
         print(e)
 
 
