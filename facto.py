@@ -29,11 +29,12 @@ def run():
         intermedia_final=archivo[intermedia]
         punta= archivo['Periodos']=='punta'
         punta_final= archivo[punta]
+       
+        nombre_procesado= nombre[0:len(nombre)-4]+'_procesado.xlsx'
 
-
-        archivo.to_excel('mydata.xlsx', "Datos")
-        book = load_workbook('mydata.xlsx')
-        writer = pd.ExcelWriter('mydata.xlsx', engine='openpyxl')
+        archivo.to_excel(nombre_procesado, "Datos")
+        book = load_workbook(nombre_procesado)
+        writer = pd.ExcelWriter(nombre_procesado, engine='openpyxl')
         writer.book = book
 
         writer.sheets = dict((ws.title, ws) for ws in book.worksheets)
@@ -57,7 +58,7 @@ def run():
         print('\n\n')
         print("Archivo procesado correctamente")
         print("Archivo guardado correctamente")
-        print("Todo ocurrio con normalidad")
+        print("Terminado con normalidad")
 
 
                    
