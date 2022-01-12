@@ -59,7 +59,7 @@ def procesar(dataframe, periodo, tarifas):
                 periodos.append(cal_periodo(dataframe['Fecha/hora'][cont],periodos_tarifa4, festivos))
         
         dataframe['Periodos']= periodos
-        #print(dataframe)
+        
 
         
                     
@@ -115,7 +115,7 @@ def sel_tarifa(fecha, dia_semana, tar):
     for element in tar : 
         
         horario = list(element.items())
-        #print('horario',horario)
+        
         for hora in range (0, len(horario),2):
                    
             inicio_tupla= time.strptime(horario[hora][1],'%H:%M')
@@ -183,10 +183,7 @@ def dem_max (dataframe):
 
     df_dm = pd.concat([df_max, df_min, df_consumo], axis =1)
     df_dm.columns=["Demanda Maxima", "Demanda Minima", "consumo total" ]
-    #print(df_dm)
-    #print(type(id_max))
-    #print(id_min)
-    #print(consumo_total)
+   
     return df_dm
 
 

@@ -16,9 +16,9 @@ def verificar(archivo):
     
     archivo['Fecha/hora'] = archivo['Fecha/hora']+ " "+ archivo['TR1.']
 
-    #print (archivo['Fecha/hora'].values[0])
+   
     archivo['Fecha/hora'] = pd.to_datetime(archivo['Fecha/hora'], format ='%d/%m/%Y %H:%M:%S') 
-    #print (archivo['Fecha/hora'].values[0])
+    
     
     # verificar incremento 
     incremento = (archivo['Fecha/hora'].values[0]-archivo['Fecha/hora'].values[1]).astype('timedelta64[m]')
